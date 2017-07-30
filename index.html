@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+        <title>Communika Solutions</title>
+        <link href="css/main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Open+Sans" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo-banner">
+                <div class="logo-container">
+                    <img src="http://placehold.it/75x75/B52209/E52B0B" alt="logo">
+                </div>
+            </div> <!-- /logo-banner -->
+            <div class="hero" id="hero"> 
+                <div class="phone">
+                    <p>(408) 844-3223</p>
+                </div> <!-- /phone -->
+                <div class="hero-content" id="heroContent">
+                    <h1>New and used car parts.</h1>
+                    <p>OEM and aftermarket auto-parts for various car makes, year, and model.</p>
+                </div> <!-- /hero-content -->
+            </div> <!-- /hero -->
+        </header>
+
+
+        <main>
+            <section class="about-main" id="aboutMain">
+                <h1 class="section-title">About Us</h1>
+                <hr>
+
+                <div class="about-container">
+                    <div class="about about-first">
+                        <div class="about-content">
+                            <h3 class="about-title">Better prices</h3>
+                            <p>We give you better prices. Enjoy price savings on the car parts that you need.</p>
+                        </div> <!-- /about-content -->
+                    </div> <!-- /about-first -->
+
+                    <div class="about about-second">
+                        <div class="about-content">
+                            <h3 class="about-title">Fast Delivery</h3>
+                            <p>We ship nationwide.</p>
+                        </div> <!-- /about-content -->
+                    </div> <!-- /about-second -->
+
+                    <div class="about about-third">
+                        <div class="about-content">
+                            <h3 class="about-title">Get a quote today</h3>
+                            <p>Call us at (408) 844-3223</p> <br>
+                            <p>Email us at <a href="mailto:sales@fixitcarparts.com">sales@fixitcarparts.com</a></p>
+                        </div> <!-- /about-content -->
+                    </div> <!-- /about-third -->
+                </div> <!-- /about-container -->
+            </section>
+
+            <section class="subscribe">
+                <div class="subs-container">
+                    <div class="subs-content">
+                        <h2>Subscribe</h2>
+                        <p>Sign up to hear from us about specials, sales,and events.</p>
+                    </div> <!-- /subs-content -->
+                    <form action="index.html" method="post" class="signup">
+                        <input type="text" name="user_email" placeholder="Email Address">
+                        <button type="submit">SIGN UP</button>
+                    </form> <!-- /signup -->
+                </div> <!-- /subs-container -->
+            </section>
+
+            <section class="contact-main">
+                <h1 class="section-title">Contact Us</h1>
+                <hr>
+                <h3>Drop us a line!</h3>
+
+                <form action="index.html" method="post">
+                    <input type="text" name="user_name" placeholder="Name">
+                    <input type="text" name="user_email" placeholder="Email*">
+                    <textarea rows="10" cols="6" type="text" name="user_message" placeholder="Message"></textarea>
+                    <button type="submit">SEND</button>
+                </form>
+
+                <div class="contact-content">
+                    <h3>Get a quote today!</h3>
+                    <p>We want to give you the best prices for your auto-part needs. Call us today!</p>
+
+                    <h3>Fix It! Car Parts</h3>
+                    <p><a href="callto:(408)844-3223">(408) 844-3223</a></p>
+
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 9am - 5pm</p>
+                    <p>Saturday: By appointment</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="main-footer">
+            <div class="footer">
+                <p>Copyright &copy; Communika Solutions</p>
+                <p>All Rights Reserved.</p>
+
+            </div>
+        </footer>
+
+        <script>
+
+            window.addEventListener("DOMContentLoaded", scrollLoop, false);
+
+            var heroContent = document.querySelector("#heroContent");
+            var hero = document.querySelector("#hero");
+
+            var yScrollPosition;
+
+            function scrollLoop(e) {
+                yScrollPosition = window.scrollY;
+                setTranslate(yScrollPosition * .5, hero);
+                animateHeroContent(yScrollPosition, heroContent);
+
+                requestAnimationFrame(scrollLoop);
+            }
+
+            function setTranslate(yPos, el) {
+                el.style.transform = "translateY(" + yPos + "px)";
+            }
+
+            function animateHeroContent(yPos, el)
+            {
+                let opacity = 1 - (yPos / 200);
+                el.style.opacity = opacity;
+                setTranslate(yPos * -.2, el);
+            }
+
+        </script>
+
+    </body>
+</html>
